@@ -15,10 +15,12 @@ class CreateKegiatansTable extends Migration
     {
         Schema::create('kegiatans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('nama');
             $table->string('deskripsi');
+            $table->string('slug');
+            $table->string('tempat');
             $table->string('waktu');
-            $table->string('gambar');
             $table->timestamps();
         });
     }

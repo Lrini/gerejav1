@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RenunganController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +16,6 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('renungan', 'RenunganController');
+Route::get('/renungan', [RenunganController::class, 'index']);
+
 Route::resource('kegiatan', 'KegiatanController');

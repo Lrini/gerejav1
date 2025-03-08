@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
 
 class renungan extends Model
 {
@@ -13,6 +12,11 @@ class renungan extends Model
     //mendefinisikan nama tabel
     protected $table = 'renungans';
     //mendefinisikan kolom yang dapat diisi
-    protected $fillable = ['judul','ayat','isi','tanggal'];
+    protected $fillable = ['judul','ayat','isi','tanggal','slug'];
+
+   public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

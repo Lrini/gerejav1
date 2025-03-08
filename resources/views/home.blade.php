@@ -44,8 +44,8 @@
                 <h5 class="card-title">{{ $renungan->judul }}</h5>
                 <p class="card-text">{{ $renungan->ayat }}</p>
                 <p class="card-text">{{ $renungan->isi }}</p>
-                <p class="card-text"><small class="text-body-secondary">{{ $renungan->isi }}</small></p>
-                <a href="" class="btn btn-primary">Read more..</a>
+                <p class="card-text"><small class="text-body-secondary">{{$renungan->user->name}}</small></p>
+                <a href="/renungans/{{$renungan->id}}" class="btn btn-primary">Read more..</a>
             @endforeach
             </div>
           </div>

@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\renungan;
+use App\Models\kegiatan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory()->count(1)->create();
+
+        // Buat data renungan
+        Renungan::factory()->count(5)->create();
+
+        // Buat data kegiatan
+        Kegiatan::factory()->count(5)->create();
+       
     }
 }

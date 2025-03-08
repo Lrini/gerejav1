@@ -15,9 +15,12 @@ class CreateRenungansTable extends Migration
     {
         Schema::create('renungans', function (Blueprint $table) {
             $table->id();
+            //menambahkan kolom user_id 
+           $table->unsignedBigInteger('user_id');
             $table->string('judul');
             $table->string('ayat');
             $table->string('isi');
+            $table->string('slug');
             $table->string('tanggal');
             $table->timestamps();
         });
