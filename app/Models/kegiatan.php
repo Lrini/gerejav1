@@ -18,6 +18,9 @@ class kegiatan extends Model
 
     public function user()
     {
+        // mendefinisikan relasi antara kegiatan dan user
+        // setiap kegiatan dimiliki oleh satu user
+        // dan setiap user dapat memiliki banyak kegiatan
         return $this->belongsTo(user::class);
     }
 }

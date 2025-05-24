@@ -22,6 +22,8 @@ class User extends Authenticatable
     //relasi one to many ke model kegiatan
     public function kegiatans()
     {
+        // Setiap user dapat memiliki banyak kegiatan
+        // dan setiap kegiatan dimiliki oleh satu user
         return $this->hasMany(kegiatan::class);
     } 
 }

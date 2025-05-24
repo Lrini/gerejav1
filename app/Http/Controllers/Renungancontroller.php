@@ -14,4 +14,11 @@ class Renungancontroller extends Controller
         $renungans = Renungan::with('user')->orderBY('tanggal', 'desc')->take(5)->get(); //ambil 5 renungan terbaru
         return view('renungan',compact('renungans'));
     }
+
+    public function show($id)
+    {
+        //menampilkan renungan berdasarkan id
+        $renungan = Renungan::findOrFail($id);
+        return view('renungan', compact('renungan')); //compact digunakan untuk mengirim data ke view
+    }
 }

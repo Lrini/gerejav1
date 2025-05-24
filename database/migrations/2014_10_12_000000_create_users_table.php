@@ -13,6 +13,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        //ini adalah migration untuk membuat tabel users
+        //tabel ini akan digunakan untuk menyimpan data pengguna
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -32,6 +34,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        //ini adalah migration untuk menghapus tabel users
+        //tabel ini akan dihapus jika migration ini di rollback
         Schema::dropIfExists('users');
     }
 }

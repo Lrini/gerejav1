@@ -15,8 +15,9 @@ class Homecontroller extends Controller
         //mengambil data renungan dan kegiatan 
         //$renungans = renungan::orderBY('tanggal', 'desc')->take(1)->get(); //ambil 5 renungan terbaru
        // $kegiatans = kegiatan::orderBY('waktu', 'desc')->take(5)->get(); //ambil 5 kegiatan terbaru
-       //mengambil data kegiatan dan user
-        $kegiatans = kegiatan::with('user')->orderBY('waktu', 'desc')->take(5)->get(); //ambil 5 kegiatan terbaru 
+        //mengambil data kegiatan dan user
+        $kegiatans = kegiatan::with('user')->orderBY('waktu', 'desc')->get(); //ambil semua kegiatan terbaru 
+
        
        return view('home',compact('renungans','kegiatans'));
     }

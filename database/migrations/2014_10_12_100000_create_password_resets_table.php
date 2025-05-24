@@ -13,6 +13,8 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
+        // ini adalah migration untuk membuat tabel password_resets
+        // tabel ini akan digunakan untuk menyimpan data reset password
         Schema::create('password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token');

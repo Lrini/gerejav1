@@ -14,6 +14,9 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        // This factory generates dummy data for the User model.
+        // It uses the Faker library to create realistic data for testing purposes.
+        // The 'name' and 'username' fields are filled with random names,
         return [
             'name' => $this->faker->name(),
             'username' => $this->faker->name(),

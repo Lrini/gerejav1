@@ -19,3 +19,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/renungan', [RenunganController::class, 'index']);
 
 Route::resource('kegiatan', 'KegiatanController');
+
+Route::get('/renungan/{id}', [RenunganController::class, 'show'])->name('renungan.show');

@@ -16,6 +16,9 @@ class renungan extends Model
 
    public function user()
     {
+        //// Mendefinisikan relasi dengan model User
+        // Setiap renungan dimiliki oleh satu user
+        // dan setiap user dapat memiliki banyak renungan
         return $this->belongsTo(User::class);
     }
 
