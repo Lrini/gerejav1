@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', $renungan->judul ?? 'Renungan Detail')
-
+<!-- Renungan Detail Page -->
 @section('content')
     <div class="container py-5">
         <h1>{{ optional($renungan)->judul }}</h1>

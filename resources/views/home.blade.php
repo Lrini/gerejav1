@@ -28,17 +28,25 @@
     <!--page renungan-->
     <!--page kegiatan-->
     <div class="row g-3">
-        @foreach ($kegiatans as $kegiatan)
-            <div class="col-sm-6 mb-4"> <!-- Added mb-4 for spacing -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $kegiatan->judul }}</h5>
-                        <p class="card-text">{{ $kegiatan->deskripsi }}</p>
-                        <a href="/kegiatan/{{ $kegiatan->id }}" class="btn btn-primary">Read more..</a>
+        @if(isset($kegiatans) && count($kegiatans) > 0)
+            @foreach ($kegiatans as $kegiatan)
+                @if($kegiatan)
+                    <div class="col-sm-6 mb-4"> <!-- Added mb-4 for spacing -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $kegiatan->nama ?? 'No Name' }}</h5>
+                                <p class="card-text"><strong>{{ $kegiatan->slug ?? '' }}</strong></p>
+                                <a href="/kegiatan/{{ $kegiatan->id}}" class="btn btn-primary">Read more..</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endif
+            @endforeach
+        @else
+            <div class="col-12">
+                <p class="text-center">Tidak ada kegiatan untuk ditampilkan.</p>
             </div>
-        @endforeach
+        @endif
     </div>
     <!--page kegiatan-->
 @endsection

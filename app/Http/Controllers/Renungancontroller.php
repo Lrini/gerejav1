@@ -15,6 +15,7 @@ class Renungancontroller extends Controller
         return view('renungan',compact('renungans'));
     }
 
+    //menampilkan renungan berdasarkan id
     public function show($id)
     {
         //menampilkan renungan berdasarkan id
