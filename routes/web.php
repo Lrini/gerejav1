@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RenunganController;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/renungan', [RenunganController::class, 'index']); //renungan route
 Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');// menampilkan kegiatan berdasarkan id
 
 Route::get('/renungan/{id}', [RenunganController::class, 'show'])->name('renungan.show');// menampilkan renungan berdasarkan id
+
+Route::get('/login',[LoginController::class, 'index'])->name('login'); //login route
