@@ -26,3 +26,4 @@ Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiata
 Route::get('/renungan/{id}', [RenunganController::class, 'show'])->name('renungan.show');// menampilkan renungan berdasarkan id
 
 Route::get('/login',[LoginController::class, 'index'])->name('login'); //login route
+Route::post('/login',[LoginController::class, 'authenticate'])->name('login.authenticate'); //proses login route

@@ -6,6 +6,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
+             @if(session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('loginError') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header text-center">
                     Login to GKPKR Kupang
@@ -13,7 +19,6 @@
                 <div class="card-body">
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
-
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -36,14 +41,6 @@
                         <div class="d-grid gap-2 mt-4">
                             <button type="submit" class="btn btn-primary btn-lg">Login</button>
                         </div>
-
-                        @if (Route::has('password.request'))
-                            <div class="text-center mt-3">
-                                <a class="btn btn-link text-decoration-none" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        @endif
                     </form>
                 </div>
             </div>
